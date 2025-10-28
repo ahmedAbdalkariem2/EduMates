@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog - EduMates Programming Resources</title>
+  <meta name="description" content="Read the latest articles and tutorials about programming, web development, and learning strategies." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style-modern.css" />
+  <style>
+    .blog-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .blog-header h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .blog-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    .blog-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    .blog-article {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .blog-article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .article-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .article-content {
+      padding: 1.5rem;
+    }
+    
+    .article-meta {
+      color: var(--muted-text);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .article-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    
+    .article-excerpt {
+      color: var(--muted-text);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .back-to-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .back-to-home:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" data-i18n="brand">EduMates</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+          <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="controls">
+        <button id="langToggle" class="btn small lang-toggle" aria-label="Toggle language">
+          <span class="lang-text">ع</span>
+          <span class="lang-icon">🌐</span>
+        </button>
+        <a class="cta btn" href="index.html#courses" data-i18n="cta_start">Start Learning</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mobileNav">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="blog-header">
+    <div class="container">
+      <h1 data-i18n="blog_page_title">EduMates Blog</h1>
+      <p data-i18n="blog_page_subtitle">Learn, grow, and master programming with our curated articles and tutorials</p>
+    </div>
+  </section>
+
+  <main class="blog-container">
+    <a href="index.html" class="back-to-home" data-i18n="back_to_home">← Back to Home</a>
+    
+    <div class="blog-grid" id="blogArticles">
+      <!-- سيتم ملء المقالات عبر JavaScript -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>EduMates</strong>
+        <p data-i18n="footer_about">Curated programming resources in Arabic & English.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html#courses" data-i18n="nav_courses">Courses</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <small>© <span id="year"></span> EduMates — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // بيانات المقالات
+    const blogArticles = [
+      {
+        id: 'b1',
+        title: { en: 'How to structure your study plan', ar: 'كيف تنظّم خطة دراستك' },
+        excerpt: { en: 'A comprehensive guide to creating an effective study plan that helps you stay consistent and track your progress in programming.', ar: 'دليل شامل لإنشاء خطة دراسة فعالة تساعدك على البقاء مستمراً وتتبع تقدمك في البرمجة.' },
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        date: '2024-01-15',
+        readTime: { en: '8 min read', ar: '8 دقائق قراءة' }
+      },
+      {
+        id: 'b2',
+        title: { en: 'Top 10 free resources in 2025', ar: 'أفضل 10 مصادر مجانية في 2025' },
+        excerpt: { en: 'Discover the best free programming resources that will help you learn faster and build amazing projects without spending money.', ar: 'اكتشف أفضل المصادر البرمجية المجانية التي ستساعدك على التعلم بشكل أسرع وبناء مشاريع رائعة دون إنفاق المال.' },
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        date: '2024-01-12',
+        readTime: { en: '6 min read', ar: '6 دقائق قراءة' }
+      },
+      {
+        id: 'b3',
+        title: { en: 'JavaScript Best Practices', ar: 'أفضل ممارسات JavaScript' },
+        excerpt: { en: 'Learn the essential JavaScript practices that every developer should know to write clean, efficient, and maintainable code.', ar: 'تعلم الممارسات الأساسية في JavaScript التي يجب على كل مطور معرفتها لكتابة كود نظيف وفعال وسهل الصيانة.' },
+        image: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        date: '2024-01-10',
+        readTime: { en: '10 min read', ar: '10 دقائق قراءة' }
+      },
+      {
+        id: 'b4',
+        title: { en: 'Getting Started with React', ar: 'بدء العمل مع React' },
+        excerpt: { en: 'A complete beginner guide to start your journey with React framework, from setup to building your first component.', ar: 'دليل المبتدئين الشامل لبدء رحلتك مع إطار عمل React، من التثبيت إلى بناء أول مكون لك.' },
+        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        date: '2024-01-08',
+        readTime: { en: '12 min read', ar: '12 دقائق قراءة' }
+      },
+      {
+        id: 'b5',
+        title: { en: 'CSS Grid vs Flexbox', ar: 'مقارنة بين CSS Grid و Flexbox' },
+        excerpt: { en: 'Understand when to use CSS Grid and when to use Flexbox for your layouts with practical examples and use cases.', ar: 'افهم متى تستخدم CSS Grid ومتى تستخدم Flexbox في تخطيطاتك مع أمثلة عملية وحالات استخدام.' },
+        image: 'css.png',
+        date: '2024-01-05',
+        readTime: { en: '9 min read', ar: '9 دقائق قراءة' }
+      },
+      {
+        id: 'b6',
+        title: { en: 'Python for Data Science', ar: 'بايثون لعلوم البيانات' },
+        excerpt: { en: 'Learn how to use Python for data analysis and machine learning projects with popular libraries like Pandas and NumPy.', ar: 'تعلم كيفية استخدام بايثون في مشاريع تحليل البيانات وتعلم الآلة باستخدام مكتبات شائعة مثل Pandas و NumPy.' },
+        image: 'python-logo.png',
+        date: '2024-01-03',
+        readTime: { en: '11 min read', ar: '11 دقائق قراءة' }
+      },
+      {
+        id: 'b7',
+        title: { en: 'Git and GitHub for Beginners', ar: 'Git و GitHub للمبتدئين' },
+        excerpt: { en: 'Master the basics of version control with Git and learn how to collaborate on projects using GitHub.', ar: 'أتقن أساسيات التحكم في الإصدارات باستخدام Git وتعلم كيفية التعاون في المشاريع باستخدام GitHub.' },
+        image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        date: '2023-12-28',
+        readTime: { en: '7 min read', ar: '7 دقائق قراءة' }
+      },
+      {
+        id: 'b8',
+        title: { en: 'Responsive Web Design Principles', ar: 'مبادئ التصميم المتجاوب للويب' },
+        excerpt: { en: 'Learn the fundamental principles of responsive web design to create websites that work perfectly on all devices.', ar: 'تعلم المبادئ الأساسية للتصميم المتجاوب للويب لإنشاء مواقع تعمل بشكل مثالي على جميع الأجهزة.' },
+        image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        date: '2023-12-25',
+        readTime: { en: '8 min read', ar: '8 دقائق قراءة' }
+      },
+      {
+        id: 'b9',
+        title: { en: 'Building Your First API', ar: 'بناء أول واجهة برمجة تطبيقات لك' },
+        excerpt: { en: 'Step-by-step guide to building your first REST API with Node.js and Express, including best practices and security tips.', ar: 'دليل خطوة بخطوة لبناء أول واجهة برمجة تطبيقات REST باستخدام Node.js و Express، يتضمن أفضل الممارسات ونصائح الأمان.' },
+        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        date: '2023-12-20',
+        readTime: { en: '14 min read', ar: '14 دقائق قراءة' }
+      }
+    ];
+
+    // إعدادات اللغة
+    let lang = localStorage.getItem('edumates:lang') || 'en';
+    const translations = {
+      en: {
+        blog_page_title: 'EduMates Blog',
+        blog_page_subtitle: 'Learn, grow, and master programming with our curated articles and tutorials',
+        back_to_home: 'Back to Home',
+        read_more: 'Read more'
+      },
+      ar: {
+        blog_page_title: 'مدونة إديوميتس',
+        blog_page_subtitle: 'تعلم، تطور، وأتقن البرمجة مع مقالاتنا ودروسنا المُنتقاة',
+        back_to_home: 'العودة للرئيسية',
+        read_more: 'اقرأ المزيد'
+      }
+    };
+
+    function renderBlogArticles() {
+      const container = document.getElementById('blogArticles');
+      container.innerHTML = '';
+
+      blogArticles.forEach(article => {
+        const articleEl = document.createElement('article');
+        articleEl.className = 'blog-article';
+        articleEl.id = article.id;
+
+        articleEl.innerHTML = `
+          <img src="${article.image}" alt="${article.title[lang] || article.title.en}" class="article-image">
+          <div class="article-content">
+            <div class="article-meta">
+              ${new Date(article.date).toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US')} • ${article.readTime[lang] || article.readTime.en}
+            </div>
+            <h2 class="article-title">${article.title[lang] || article.title.en}</h2>
+            <p class="article-excerpt">${article.excerpt[lang] || article.excerpt.en}</p>
+            <a href="#" class="btn primary">${translations[lang].read_more}</a>
+          </div>
+        `;
+
+        container.appendChild(articleEl);
+      });
+    }
+
+    function renderTranslations() {
+      document.querySelectorAll('[data-i18n]').forEach(node => {
+        const key = node.getAttribute('data-i18n');
+        const text = translations[lang] && translations[lang][key];
+        if (text) node.textContent = text;
+      });
+    }
+
+    // تهيئة الصفحة
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTranslations();
+      renderBlogArticles();
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // زر تغيير اللغة
+      document.getElementById('langToggle').addEventListener('click', () => {
+        lang = lang === 'en' ? 'ar' : 'en';
+        localStorage.setItem('edumates:lang', lang);
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = lang;
+        renderTranslations();
+        renderBlogArticles();
+      });
+
+      // تعيين اتجاه الصفحة
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+    });
+  </script>
+</body>
+</html>

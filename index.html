@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EduMates — Programming Resources & Courses</title>
+  <meta name="description" content="EduMates — central hub for programming learning resources, courses, projects and community." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style-modern.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" data-i18n="brand">EduMates</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#courses" data-i18n="nav_courses">Courses</a></li>
+          <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+        <button id="langToggle" class="btn small lang-toggle" aria-label="Toggle language">
+          <span class="lang-text">AR</span>
+          
+          <span class="lang-icon">EN</span>
+        </button>
+        <a class="cta btn" href="#courses" data-i18n="cta_start">Start Learning</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mobileNav">☰</button>
+      </div>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav" hidden>
+      <ul>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#courses" data-i18n="nav_courses">Courses</a></li>
+        <li><a href="#blog" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 data-i18n="hero_title">We gather the best programming resources in one place</h1>
+          <p class="lead" data-i18n="hero_sub">
+            Free and curated tutorials, courses, projects and tools — in Arabic & English.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#courses" data-i18n="hero_cta">Browse Courses</a>
+            <a class="btn ghost" href="blog.html" data-i18n="hero_cta2">Read Blog</a>
+          </div>
+        </div>
+        <div class="hero-aside" aria-hidden="true">
+          <pre class="code-snippet">
+/* Start learning */
+const course = 'Build real projects';
+console.log(course);
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container">
+      <h2 data-i18n="about_title">About EduMates</h2>
+      <p data-i18n="about_text">
+        EduMates collects and organizes high-quality programming content — tutorials, videos, articles and open-source projects — to help learners progress from basics to job-ready skills.
+      </p>
+      <div class="cards grid-3">
+        <article class="card">
+          <h3 data-i18n="about_mission_title">Our Mission</h3>
+          <p data-i18n="about_mission">Make programming learning accessible and practical. Curated content, real projects.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="about_values_title">What we offer</h3>
+          <p data-i18n="about_values">Guides, curated courses, project templates, mentorship pathways and a growing community.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="about_team_title">Team</h3>
+          <p data-i18n="about_team">Volunteers, contributors, and course creators collaborating to keep content fresh.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Courses / Resources -->
+    <section id="courses" class="courses">
+      <div class="container">
+        <h2 class="section-title" data-i18n="courses_title">Courses & Resources</h2>
+        <p class="section-subtitle" data-i18n="courses_sub">Hand-picked courses to boost your programming skills</p>
+
+        <div class="section-header">
+          <div class="controls-row">
+            <input id="searchInput" type="search" placeholder="Search courses..." data-i18n-placeholder="search_placeholder" />
+            <select id="filterLevel" aria-label="Filter by level">
+              <option value="all" data-i18n="filter_all">All levels</option>
+              <option value="beginner" data-i18n="filter_beginner">Beginner</option>
+              <option value="intermediate" data-i18n="filter_intermediate">Intermediate</option>
+              <option value="advanced" data-i18n="filter_advanced">Advanced</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="coursesList" class="courses-grid">
+          <!-- سيتم إضافة الكورسات هنا عبر JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="section alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="blog_title">Latest Articles</h2>
+          <a href="blog.html" class="btn primary" data-i18n="view_all_articles">View All Articles</a>
+        </div>
+        <div id="blogList" class="cards grid-3">
+          <!-- Articles populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <h2 data-i18n="contact_title">Contact Us</h2>
+          <p data-i18n="contact_sub">Have a question, partnership, or contribution? Send us a message.</p>
+
+          <div class="contact-info cards">
+            <div class="card small">
+              <strong data-i18n="contact_email_label">Email</strong>
+              <p>abdalkariemahmedofficial@gmail.com</p>
+            </div>
+            <div class="card small">
+              <strong data-i18n="contact_location_label">Location</strong>
+              <p data-i18n="contact_location">Remote / Egypt</p>
+            </div>
+            <div class="card small">
+              <strong data-i18n="contact_team_label">Support</strong>
+              <p data-i18n="contact_support">Email: abdalkariemahmedofficial@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form id="contactForm" class="form card form-multistep" novalidate>
+            <div class="step" data-step="1">
+              <label for="name"><span data-i18n="form_name">Name</span></label>
+              <input id="name" name="name" type="text" required />
+              <label for="email"><span data-i18n="form_email">Email</span></label>
+              <input id="email" name="email" type="email" required />
+              <div class="form-actions">
+                <button type="button" class="btn" data-action="next" data-i18n="form_next">Next</button>
+              </div>
+            </div>
+
+            <div class="step" data-step="2" hidden>
+              <label for="topic"><span data-i18n="form_topic">Topic</span></label>
+              <select id="topic" name="topic" required>
+                <option value="" disabled selected data-i18n="form_select">Select a topic</option>
+                <option value="partnership" data-i18n="topic_partnership">Partnership</option>
+                <option value="contribution" data-i18n="topic_contribution">Contribution</option>
+                <option value="bug" data-i18n="topic_bug">Report a bug</option>
+                <option value="other" data-i18n="topic_other">Other</option>
+              </select>
+
+              <label for="message"><span data-i18n="form_message">Message</span></label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+
+              <label for="attachment" class="file-label">
+                <span data-i18n="form_attachment">Attach file (optional)</span>
+                <input id="attachment" name="attachment" type="file" accept=".png,.jpg,.jpeg,.pdf,.zip" />
+              </label>
+
+              <div id="filePreview" class="file-preview" hidden></div>
+
+              <div class="form-actions">
+                <button type="button" class="btn ghost" data-action="back" data-i18n="form_back">Back</button>
+                <button type="button" class="btn" data-action="next" data-i18n="form_review">Review</button>
+              </div>
+            </div>
+
+            <div class="step" data-step="3" hidden>
+              <h3 data-i18n="form_review_title">Review & Send</h3>
+              <div id="reviewBox" class="review-box"></div>
+              <div class="form-actions">
+                <button type="button" class="btn ghost" data-action="back" data-i18n="form_back">Back</button>
+                <button type="submit" class="btn primary" data-i18n="form_send">Send Message</button>
+              </div>
+            </div>
+
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>EduMates</strong>
+        <p data-i18n="footer_about">Curated programming resources in Arabic & English.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="#courses" data-i18n="nav_courses">Courses</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <small>© <span id="year"></span> EduMates — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

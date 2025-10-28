@@ -1,0 +1,272 @@
+/* إضافة أنماط لزر تغيير اللغة */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.lang-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.lang-icon {
+  font-size: 1.1em;
+}
+
+/* أنماط البطاقات الجديدة للمدونة */
+.blog-card {
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1.5rem;
+}
+
+.blog-meta {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.blog-card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* تحسينات للعناوين والأزرار */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  margin: 0;
+}
+
+/* تحسينات للبطاقات في القسم about */
+.grid-3 .card {
+  transition: all 0.3s ease;
+}
+
+.grid-3 .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+/* ================ Courses Section Styles ================ */
+.courses {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.courses .section-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.courses .section-subtitle {
+  color: var(--muted-text);
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.courses-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.course-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
+  transition: var(--transition);
+}
+
+.course-card .content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.course-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card:hover .overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+}
+
+/* شارات المستوى للكورسات */
+.level-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 3;
+}
+
+.course-card[data-level="beginner"] .level-badge {
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+}
+
+.course-card[data-level="intermediate"] .level-badge {
+  background: rgba(249, 115, 22, 0.9);
+  color: white;
+}
+
+.course-card[data-level="advanced"] .level-badge {
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+}
+
+/* تحسينات للعناوين في قسم الكورسات */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+/* تحسينات لأزرار التحكم في الكورسات */
+.controls-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls-row input[type="search"],
+.controls-row select {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(15,23,36,0.1);
+  border-radius: var(--radius);
+  background: white;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.controls-row input[type="search"]:focus,
+.controls-row select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(11, 110, 253, 0.1);
+}
+
+/* تحسينات للعرض على الجوال */
+@media (max-width: 768px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .course-card {
+    height: 250px;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .controls-row {
+    justify-content: center;
+  }
+  
+  .controls-row input[type="search"],
+  .controls-row select {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* تحسينات إضافية للبطاقات */
+.course-card .content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.course-card .content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
